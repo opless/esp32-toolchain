@@ -10,7 +10,8 @@ RUN apt-get -qq update \
 RUN \
 mkdir -p /esp /esp/esp-idf /esp/project && \
 wget -O /esp/toolchain.tgz https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-75-gbaf03c2-5.2.0.tar.gz && \
-tar xvf /esp/toolchain.tgz /esp \
+cd esp \
+tar xvf /esp/toolchain.tgz  \
 rm /esp/toolchain
 
 #ESP32 IDF
