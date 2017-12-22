@@ -8,14 +8,12 @@ RUN apt-get -qq update \
 
 # Create some directories, and grab the ESP32 toolchain
 RUN \
-mkdir -p /esp /esp/esp-idf /esp/project && \
+mkdir -p /esp /esp/project && \
 wget -O /esp/toolchain.tgz https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-75-gbaf03c2-5.2.0.tar.gz && \
-cd esp \
+cd /esp \
 tar xvf /esp/toolchain.tgz  \
-rm /esp/toolchain
-
-#ESP32 IDF
-#git clone --recursive https://github.com/espressif/esp-idf.git
+rm /esp/toolchain && \
+git clone --recursive https://github.com/espressif/esp-idf.git
 
 
 # Add the toolchain binaries to PATH
