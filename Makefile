@@ -1,2 +1,4 @@
+DOCKERUSERNAME=opless
+
 build:
-	docker build -t opless/esp32-toolchain .
+	docker build -t $(DOCKERUSERNAME)/esp32-toolchain .

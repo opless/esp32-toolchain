@@ -10,9 +10,9 @@ RUN apt-get -qq update \
 RUN \
 mkdir -p /esp /esp/project && \
 wget -O /esp/toolchain.tgz https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-75-gbaf03c2-5.2.0.tar.gz && \
-cd /esp \
-tar xvf /esp/toolchain.tgz  \
-rm /esp/toolchain && \
+cd /esp && \
+tar xvf /esp/toolchain.tgz &&  \
+rm /esp/toolchain.tgz && \
 git clone --recursive https://github.com/espressif/esp-idf.git
 
 
